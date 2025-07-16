@@ -15,6 +15,11 @@ const getTeamData = async(teamName) => {
 }
 
 searchBtn.addEventListener("click", async() => {
+
+    if(searchInput){
+        document.getElementById("team-container").classList.remove("hide");
+    }
+    
     const result = await getTeamData(searchInput.value);
 
     teamImg.setAttribute("src", result.teams[0].strBadge);
